@@ -4,10 +4,9 @@ import java.util.List;
 import java.util.UUID;
 
 public interface userDao {
-    int insertUser(userInfo userInfo);
     int insertUser(UUID id, userInfo userInfo);
     List<userInfo> getAll();
-    default int insertPerson( userInfo userInfo){
+    default int insertUser( userInfo userInfo){
         UUID id  = UUID.randomUUID();
         return insertUser(id,userInfo);
     }

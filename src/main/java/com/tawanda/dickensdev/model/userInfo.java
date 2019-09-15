@@ -1,5 +1,6 @@
 package com.tawanda.dickensdev.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
@@ -12,7 +13,7 @@ public class userInfo {
     public userInfo(){
 
     }
-    public userInfo(String username, String email, String password, UUID userId) {
+    public userInfo(@JsonProperty("username") String username,@JsonProperty("email") String email,@JsonProperty("password") String password,@JsonProperty("userId") UUID userId) {
         this.username = username;
         this.email = email;
         this.password = password;
