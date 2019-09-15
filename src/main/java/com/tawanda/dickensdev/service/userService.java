@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
+import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
@@ -38,13 +39,14 @@ public class userService {
     }
 
     public int insertUser(userInfo userInfo){
+        Pbkdf2PasswordEncoder encoder = new Pbkdf2PasswordEncoder("secret", 10000, 128);
         String sql = "insert into userdb(username,userid,useremail,userpassword) values (?,uuid_generate_v4(),?,?)";
         jdbcTemplate.execute(sql, new PreparedStatementCallback<Boolean>() {
             @Override
             public Boolean doInPreparedStatement(PreparedStatement preparedStatement) throws SQLException, DataAccessException {
                 preparedStatement.setString(1,userInfo.getUsername());
                 preparedStatement.setString(2,userInfo.getEmail());
-                preparedStatement.setString(3,userInfo.getPassword());
+                preparedStatement.setString(3,encoder.encode(userInfo.getPassword()));
                 return preparedStatement.execute();
             }
         });
