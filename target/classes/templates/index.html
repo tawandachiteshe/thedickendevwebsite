@@ -1,0 +1,147 @@
+<!DOCTYPE html >
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/main.css" th:href="@{/css/main.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/css/materialize.css"  th:href="@{/css/materialize.css}" rel="stylesheet">
+    <script src="/js/jquery-3.4.1.js" th:src="@{/js/jquery-3.4.1.js}"></script>
+    <script th:src="@{/js/materialize.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+    <title>thedickensdev</title>
+</head>
+<body class="infoDiv">
+        <div>
+                <nav class="nav-extended purple lighten-3">
+                        <div class="nav-wrapper">
+                          <a href="#" class="brand-logo"><img src="/icons/thedickenslogo.png" th:src="@{/icons/thedickenslogo.png}"  style="float:left" class="circle responsive-img material-icons" alt=""></a>
+                          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                          <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">About</a></li>
+                          </ul>
+                        </div>
+                        <div class="nav-content">
+                          <ul class="tabs tabs-transparent">
+                              <li class="tab"><a href="#index">Information</a> </li>
+                            <li class="tab"><a href="#art">Art Gallery</a></li>
+                            <li class="tab"><a class="active" href="#games">Games</a></li>
+                            <li class="tab"><a href="#support">Support</a></li>
+                            <li class="tab"><a href="#videos">Videos</a></li>
+                          </ul>
+                        </div>
+                      </nav>
+                    
+                      <ul class="sidenav" id="mobile-demo">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">about</a></li>
+                      </ul>
+                     
+        </div>
+        <div class="infoDiv">
+            
+                <div id="index" class="center-align center infoDiv row col s12 purple-text lighten-3">
+                        <div class="col s12">
+                            <h1 class="center-align">Computer Enthusiast, Game Dev, Innovator</h1>
+                        </div>
+                        <br>
+                        <div class="center col s12">
+                            <button class="center waves-effect center-align btn-large purple lighten-3">Read more</button>
+                        </div>    
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="infoDiv row">
+                            <div class="col s4 z-depth-0">
+                                <H5>Top Stories</H5>
+                           
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus reprehenderit non harum neque ipsam quibusdam nemo dolorem error doloribus molestias magnam ipsa qui, esse animi! Eveniet tenetur debitis sunt nam.</p>
+                            </div>
+                            <div class="col s4 z-depth-0">
+                                <h5>Projects In progress</h5>
+                               
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis harum est architecto saepe quisquam, earum fuga quia. Provident expedita dolores, odio quas autem enim officia dolorum suscipit architecto, commodi ex?</p>
+
+                            </div>
+                            <div class="col s4 z-depth-0">
+                                <h5>Games</h5>
+                               
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas fugiat corrupti repellat voluptates consectetur, maxime numquam, laudantium nemo vitae a est. Id odio perferendis voluptate nemo, perspiciatis voluptas praesentium ducimus.</p>
+                            </div>
+                        </div>   
+                    </div> 
+                        
+                <div id="art" class="container col s12">
+                    <h1 class="purple-text center center-align lighten-3">Coming Soon!!!</h1>
+                    </div>
+                    <div id="games" class="container row col s12">
+                            <h1 class="center-align center purple-text lighten-3">Projects</h1>
+                        
+                            <div class="purple-text lighten-3 card col s12">
+                                <h4 class="center center-align purple-text lighten-3" >Wave reloaded</h4>
+                                <p>I've created this game from scratch using only java</p>
+                            </div>
+                            <br>
+                            <div class="card purple-text lighten-3 col s12">
+                                <h4 class="center center-align purple-text lighten-3">Hang man</h4>
+                                <p class="purple-text lighten-3">hang man is just a game i made to have a better understanding of oop</p>
+                                </div>
+                                <br>
+                                <div class="card col s12">
+                                <h4 class="center center-align purple-text lighten-3">SectorCoin</h4>
+                                <p class="purple-text lighten-3">basic blockchain implemented in java</p>
+                                    </div>
+                                  
+                                                
+                    </div>
+                    <div id="support" class="col s12">
+                        <div class="container"></div>
+                    </div>
+                    <div id="videos" class="col s12"> </div>
+                    <ul class="collapsible">
+                            <li>
+                              <div class="collapsible-header"><i class="material-icons"></i>Sectorcoin</div>
+                              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>godor</div>
+                            </li>
+                            <li>
+                              <div class="collapsible-header"><i class="material-icons">place</i>godot</div>
+                              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                            </li>
+                            <li>
+                              <div class="collapsible-header"><i class="material-icons">whatshot</i>more games to come</div>
+                              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                            </li>
+                          </ul>
+        </div>
+        
+</body>
+
+<footer class="page-footer purple lighten-3">
+        <div>
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">The Dickens Dev</h5>
+              <p class="grey-text text-lighten-4">Dickens Dev is an individual interested in Computers. Please feel free to contact on the links below</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Keep in Touch!</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="https://twitter.com/NChiteshe"><i class="fa fa-2x fa-twitter label-icon left material-icons"></i>twitter.com</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!"><i class="left label-icon material-icons">email</i>dickenstawanda@gmail.com</a></li>
+                <li><a class="grey-text text-lighten-3" href="https://github.com/tawandachiteshe"><i class="label-icon left fa fa-2x fa-github material-icons"></i></a>github.com</li>
+                <li><a class="grey-text text-lighten-3" href="#!"><i class="fa label-icon left fa-2x fa-phone material-icons"></i></a>+263772460863/0772929373</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2019 all Copyrights are Reserved
+          </div>
+        </div>
+      </footer>
+</html>

@@ -1,0 +1,6 @@
+app:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:5432/userDb
+    username: postgres
+    password: dick
+    driver-class-name:  org.postgresql.Driver
