@@ -39,6 +39,7 @@ public class userService {
     }
 
     public int insertUser(userInfo userInfo){
+
         Pbkdf2PasswordEncoder encoder = new Pbkdf2PasswordEncoder("secret", 10000, 128);
         String sql = "insert into userdb(username,userid,useremail,userpassword) values (?,uuid_generate_v4(),?,?)";
         jdbcTemplate.execute(sql, new PreparedStatementCallback<Boolean>() {
@@ -50,6 +51,7 @@ public class userService {
                 return preparedStatement.execute();
             }
         });
+
         return 1;
     }
 }
