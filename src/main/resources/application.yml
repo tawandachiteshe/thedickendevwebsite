@@ -1,5 +1,5 @@
 app:
   datasource:
-    jdbc-url: ${JDBC_DATABASE_URL} #jdbc:postgresql://localhost:5432/userDb
-    username: ${JDBC_DATABASE_USERNAME}
-    password: ${JDBC_DATABASE_PASSWORD}
+    jdbc-url:  jdbc:postgresql://localhost:5432/userDb
+    username: postgres
+    password: dick

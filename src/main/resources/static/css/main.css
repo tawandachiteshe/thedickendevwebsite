@@ -1,5 +1,12 @@
-h1{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+h{
+    font-family: 'Manjari';
+}
+
+p{
+    font-family: 'Manjari';
+}
+input{
+    font-family: 'Manjari';
 }
 
 h1.infoHeader{
@@ -12,3 +19,46 @@ img{
     width: 128px;
     height: auto;
 }
+
+body {
+    font-family: 'Manjari';
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .input-field input[type=date]:focus + label,
+  .input-field input[type=text]:focus + label,
+  .input-field input[type=email]:focus + label,
+  .input-field input[type=password]:focus + label {
+    color: #e91e63;
+  }
+
+  
+.content {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .background-image{
+    background-color: floralwhite;
+  }
+
+  .input-field input[type=date]:focus,
+  .input-field input[type=text]:focus,
+  .input-field input[type=email]:focus,
+  .input-field input[type=password]:focus {
+    border-bottom: 2px solid #e91e63;
+    box-shadow: none;
+  }
