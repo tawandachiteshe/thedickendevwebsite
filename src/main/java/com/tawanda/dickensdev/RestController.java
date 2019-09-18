@@ -3,6 +3,7 @@ package com.tawanda.dickensdev;
 import com.tawanda.dickensdev.model.userInfo;
 import com.tawanda.dickensdev.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,6 +27,18 @@ public class RestController {
 
     @PostMapping
     public void addUser(@RequestBody userInfo userInfo){
-        userService.insertUser(userInfo);
+        userService.registerUser(userInfo);
+    }
+
+    @GetMapping("/name")
+    public String name(){
+        Pbkdf2PasswordEncoder encoder = new Pbkdf2PasswordEncoder("secret", 10000, 128);
+        String hash = encoder.encode("name");
+        return "" + encoder.matches("name",hash);
+
+    }
+    @PostMapping("/validate")
+    public boolean login(@RequestBody userInfo userInfo){
+    return userService.validateLogin(userInfo);
     }
 }

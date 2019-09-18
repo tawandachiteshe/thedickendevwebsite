@@ -10,5 +10,5 @@ public interface userDao {
         UUID id  = UUID.randomUUID();
         return insertUser(id,userInfo);
     }
-    int getuser(userInfo userInfo);
+    int login(userInfo userInfo);
 }
