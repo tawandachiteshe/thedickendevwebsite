@@ -30,6 +30,7 @@ public class userService implements UserDetailsService {
     private userDao userDao;
     private Pbkdf2PasswordEncoder encoder = new Pbkdf2PasswordEncoder("secret", 10000, 128);
     private final JdbcTemplate jdbcTemplate;
+    private List<userInfo> userList;
 
     @Autowired
     public userService(JdbcTemplate jdbcTemplate) {
@@ -81,10 +82,10 @@ public class userService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        List<userInfo> validate = getAllpeople();
+        userList = getAllpeople();
 
         User user1 = null;
-        for (userInfo user: validate) {
+        for (userInfo user: userList) {
            if(user.getEmail().equals(s)){
 
                user1 = new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), mapRolesToAuthorities(Arrays.asList(new Role("ROLE_USER"))));
@@ -92,6 +93,26 @@ public class userService implements UserDetailsService {
            }
         }
         return user1;
+    }
+    public userInfo findByEmail(String email){
+        userInfo userInfo = null;
+        for (userInfo user:userList) {
+            if(user.getEmail().equals(email)){
+                userInfo = new userInfo(user.getUsername(),user.getEmail(),user.getPassword(),user.getUserId());
+            }
+        }
+        return userInfo;
+    }
+
+    public List<userInfo> findById(String token){
+        String sql = "select * from userdb where userid=" + token;
+       return jdbcTemplate.query(sql,(resultSet, i) -> {
+            String name = resultSet.getString("username");
+            UUID userid =  UUID.fromString(resultSet.getString("userid"));
+            String uemail = resultSet.getString("useremail");
+            String password = resultSet.getString("userpassword");
+            return new userInfo(name,uemail,password,userid);
+        });
     }
 
     private Collection < ? extends GrantedAuthority > mapRolesToAuthorities(Collection <Role> roles) {

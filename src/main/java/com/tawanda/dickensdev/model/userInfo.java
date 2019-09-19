@@ -10,6 +10,8 @@ public class userInfo {
     private String email;
     private String password;
     private UUID userId;
+    private UUID ConfirmationToken;
+    private Boolean Enabled;
     public userInfo(){
 
     }
@@ -50,5 +52,21 @@ public class userInfo {
 
     public void setUserId(UUID userId) {
         this.userId = userId;
+    }
+
+    public UUID getConfirmationToken() {
+        return ConfirmationToken;
+    }
+
+    public void setConfirmationToken(UUID confirmationToken) {
+        ConfirmationToken = confirmationToken;
+    }
+
+    public Boolean getEnabled() {
+        return true;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        Enabled = enabled;
     }
 }
