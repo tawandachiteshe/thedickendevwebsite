@@ -12,31 +12,31 @@
   <script th:src="@{/js/main.js}"></script>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
 </head>
-<body>
+<body class="container">
     <center>
         <main>
-                <h1 class="purple-text lighten-3">Register</h1>
+                <h1 class="purple-text lighten-3 te">please sign up?</h1>
                 <div class="section"></div>
                 <div class="container section row z-depth-1" style="display: inline-block; padding: 42px 58px 0px 58px; border: 1px solid #EEE;">
-                        <form class="col s12">
+                        <form th:action="@{/register}" method="POST"  th:object="${userInfo}" class="col s12">
                                 <div class="row">
                                   <div class="input-field col s12">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input id="icon_prefix" type="text" class="validate">
+                                    <input id="icon_prefix" type="text" th:field="*{username}" class="validate">
                                     <label for="icon_prefix">Username</label>
                                   </div>
                                   <div class="input-field col s12">
                                         <i class="material-icons prefix">email</i>
-                                        <input id="icon_telephone" type="email" class="validate">
+                                        <input id="icon_telephone" type="email" th:field="*{email}" class="validate">
                                         <label for="icon_telephone">Email</label>
                                       </div>
                                   <div class="input-field col s6">
                                     <i class="material-icons prefix">fingerprint</i>
-                                    <input id="icon_telephone" type="password" class="validate">
+                                    <input id="icon_telephone" type="password" th:field="*{password}" class="validate">
                                     <label for="icon_telephone">Password</label>
                                   </div>
                                   <div class="input-field col s6">
@@ -46,7 +46,7 @@
                                       </div>
                                 </div>
                                 <div class="input-field col s12">
-                                        <button class="btn waves-effect waves-light" type="submit" name="action">sign up?
+                                        <button class="purple lighten-3 btn waves-effect waves-light" type="submit" name="action">sign up?
                                         </button>
                                 </div>
                                 <div class="input-field col s12">

@@ -1,7 +1,7 @@
 app:
   datasource:
-    jdbc-url:  jdbc:postgresql://localhost:5432/userDb
-    username: postgres
+    jdbc-url:  jdbc:mysql://localhost:3306/userdb
+    username: root
     password: dick
 spring:
   mail:

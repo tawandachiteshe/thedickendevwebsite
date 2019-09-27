@@ -9,9 +9,7 @@ import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -37,9 +35,15 @@ public class RegisterController {
 
     // Return registration form template
     @RequestMapping("/register")
-    public String showRegistrationPage(Model modelAndView, userInfo user){
-
+    public String register(Model model){
+        model.addAttribute("userInfo",new userInfo());
         return "register";
+    }
+
+    @PostMapping("/register")
+    public String submitRegister(@ModelAttribute userInfo userInfo){
+        UserService.registerUser(userInfo);
+        return "login";
     }
 
 

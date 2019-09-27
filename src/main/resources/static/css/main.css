@@ -1,12 +1,12 @@
 h{
-    font-family: 'Manjari';
+    font-family: 'Manjari Roboto'
 }
 
 p{
-    font-family: 'Manjari';
+    font-family: 'Manjari Roboto';
 }
 input{
-    font-family: 'Manjari';
+    font-family: 'Manjari Roboto';
 }
 
 h1.infoHeader{
@@ -21,7 +21,7 @@ img{
 }
 
 body {
-    font-family: 'Manjari';
+    font-family: 'Manjari Roboto';
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -52,7 +52,7 @@ body {
     margin-right: 20px;
   }
   .background-image{
-    background-color: floralwhite;
+    background-image: url('/icons/background.png')
   }
 
   .input-field input[type=date]:focus,
