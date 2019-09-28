@@ -1,6 +1,7 @@
 package com.tawanda.dickensdev.service;
 
 import com.tawanda.dickensdev.model.Role;
+import com.tawanda.dickensdev.model.UserRoles;
 import com.tawanda.dickensdev.model.userDao;
 import com.tawanda.dickensdev.model.userInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +25,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.stream.Collectors;
-
-@Repository("postgres")
+@Repository
 public class userService implements UserDetailsService {
     private userDao userDao;
+    private UserRoles userRoles;
     private Pbkdf2PasswordEncoder encoder = new Pbkdf2PasswordEncoder("secret", 10000, 128);
     private final JdbcTemplate jdbcTemplate;
     private List<userInfo> userList;
@@ -46,20 +47,24 @@ public class userService implements UserDetailsService {
             UUID userid =  UUID.fromString(resultSet.getString("userid"));
             String uemail = resultSet.getString("useremail");
             String password = resultSet.getString("userpassword");
-            return new userInfo(name,uemail,password,userid);
+            boolean enabled = resultSet.getBoolean("enabled");
+            String role = resultSet.getString("user_role");
+            return new userInfo(name,uemail,password,userid,enabled,role);
         });
     }
 
     public int registerUser(userInfo userInfo){
 
 
-        String sql = "insert into userdb(username,userid,useremail,userpassword) values (?,uuid_generate_v4(),?,?)";
+        String sql = "insert into userdb(username,userid,useremail,userpassword,enabled,user_role) values (?,uuid_generate_v4(),?,?,?,?)";
         jdbcTemplate.execute(sql, new PreparedStatementCallback<Boolean>() {
             @Override
             public Boolean doInPreparedStatement(PreparedStatement preparedStatement) throws SQLException, DataAccessException {
                 preparedStatement.setString(1,userInfo.getUsername());
                 preparedStatement.setString(2,userInfo.getEmail());
                 preparedStatement.setString(3,encoder.encode(userInfo.getPassword()));
+                preparedStatement.setBoolean(4,userInfo.getEnabled());
+                preparedStatement.setString(5,userInfo.getRoles());
                 return preparedStatement.execute();
             }
         });
@@ -82,36 +87,43 @@ public class userService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        userList = getAllpeople();
+       List<userInfo> users = jdbcTemplate.query("select * from userdb where useremail=" + "\'" + s + "\'",(resultSet, i) -> {
+            String name = resultSet.getString("username");
+            UUID userid =  UUID.fromString(resultSet.getString("userid"));
+            String uemail = resultSet.getString("useremail");
+            String password = resultSet.getString("userpassword");
+            boolean enabled = resultSet.getBoolean("enabled");
+            String role = resultSet.getString("user_role");
+            return new userInfo(name,uemail,password,userid,enabled,role);
+        });
+        userInfo user = users.get(0);
 
-        User user1 = null;
-        for (userInfo user: userList) {
-           if(user.getEmail().equals(s)){
-
-               user1 = new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), mapRolesToAuthorities(Arrays.asList(new Role("ROLE_USER"))));
-               return user1;
-           }
-        }
-        return user1;
+        return new User(user.getEmail(), user.getPassword(), mapRolesToAuthorities(Arrays.asList(new Role(user.getRoles()))));
     }
     public userInfo findByEmail(String email){
         userInfo userInfo = null;
         for (userInfo user:userList) {
             if(user.getEmail().equals(email)){
-                userInfo = new userInfo(user.getUsername(),user.getEmail(),user.getPassword(),user.getUserId());
+                userInfo = new userInfo(user.getUsername(),user.getEmail(),user.getPassword(),user.getUserId(),user.getEnabled(),userInfo.getRoles());
             }
         }
         return userInfo;
     }
+    public void enableUser(userInfo user){
+        String sql = "update userdb set enabled="+user.getEnabled()+" where userid="+"\'"+user.getUserId()+"\'";
+        jdbcTemplate.execute(sql);
 
+    }
     public List<userInfo> findById(String token){
-        String sql = "select * from userdb where userid=" + token;
+        String sql = "select * from userdb where userid=" + "\'" + token + "\'";
        return jdbcTemplate.query(sql,(resultSet, i) -> {
             String name = resultSet.getString("username");
             UUID userid =  UUID.fromString(resultSet.getString("userid"));
             String uemail = resultSet.getString("useremail");
             String password = resultSet.getString("userpassword");
-            return new userInfo(name,uemail,password,userid);
+            boolean enabled = resultSet.getBoolean("enabled");
+            String role = resultSet.getString("user_role");
+            return new userInfo(name,uemail,password,userid,enabled,role);
         });
     }
 

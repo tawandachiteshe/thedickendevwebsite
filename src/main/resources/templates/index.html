@@ -18,7 +18,7 @@
                 <nav class="nav-extended purple lighten-3">
                         <div class="nav-wrapper">
                           <a href="#" class="brand-logo"><img src="/icons/thedickenslogo.png" th:src="@{/icons/thedickenslogo.png}"  style="float:left" class="circle responsive-img material-icons" alt=""></a>
-                          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"><img class="material-icon" th:src="@{/icons/menu.png}"></i></a>
                           <ul id="nav-mobile" class="right hide-on-med-and-down">
                             <li><a href="#">Home</a></li>
                             <li><a href="#">Contact</a></li>
@@ -59,20 +59,20 @@
                         <br>
                         <div class="infoDiv row">
                             <div class="col s4 z-depth-0">
-                                <H5>Top Stories</H5>
+                                <H5 th:text="${StoriesHeading}">Top Stories</H5>
                            
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus reprehenderit non harum neque ipsam quibusdam nemo dolorem error doloribus molestias magnam ipsa qui, esse animi! Eveniet tenetur debitis sunt nam.</p>
+                                <p th:text="${StoriesBody}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus reprehenderit non harum neque ipsam quibusdam nemo dolorem error doloribus molestias magnam ipsa qui, esse animi! Eveniet tenetur debitis sunt nam.</p>
                             </div>
                             <div class="col s4 z-depth-0">
-                                <h5>Projects In progress</h5>
+                                <h5 th:text="${StoriesHeading}">Projects In progress</h5>
                                
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis harum est architecto saepe quisquam, earum fuga quia. Provident expedita dolores, odio quas autem enim officia dolorum suscipit architecto, commodi ex?</p>
+                                <p th:text="${StoriesBody}">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis harum est architecto saepe quisquam, earum fuga quia. Provident expedita dolores, odio quas autem enim officia dolorum suscipit architecto, commodi ex?</p>
 
                             </div>
                             <div class="col s4 z-depth-0">
-                                <h5>Games</h5>
-                               
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas fugiat corrupti repellat voluptates consectetur, maxime numquam, laudantium nemo vitae a est. Id odio perferendis voluptate nemo, perspiciatis voluptas praesentium ducimus.</p>
+                                <h5 th:text="${StoriesHeading}">Games</h5>
+                           
+                                <p th:text="${StoriesBody}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas fugiat corrupti repellat voluptates consectetur, maxime numquam, laudantium nemo vitae a est. Id odio perferendis voluptate nemo, perspiciatis voluptas praesentium ducimus.</p>
                             </div>
                         </div>   
                     </div> 
@@ -131,7 +131,7 @@
           <div class="row">
             <div class="col l6 s12">
               <h5 class="white-text">The Dickens Dev</h5>
-              <p class="grey-text text-lighten-4">Dickens Dev is an individual interested in Computers. Please feel free to contact on the links below</p>
+              <p class="grey-text text-lighten-4">Dickens Dev is an individual interested in Computers. Please feel free to contact on the category below</p>
             </div>
             <div class="col l4 offset-l2 s12">
               <h5 class="white-text">Keep in Touch!</h5>

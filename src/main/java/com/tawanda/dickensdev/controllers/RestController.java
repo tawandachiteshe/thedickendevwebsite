@@ -1,4 +1,4 @@
-package com.tawanda.dickensdev;
+package com.tawanda.dickensdev.controllers;
 
 import com.tawanda.dickensdev.model.userInfo;
 import com.tawanda.dickensdev.service.userService;

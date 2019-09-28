@@ -12,14 +12,17 @@ public class userInfo {
     private UUID userId;
     private UUID ConfirmationToken;
     private Boolean Enabled;
+    private String roles;
     public userInfo(){
 
     }
-    public userInfo(@JsonProperty("username") String username,@JsonProperty("email") String email,@JsonProperty("password") String password,@JsonProperty("userId") UUID userId) {
+    public userInfo(@JsonProperty("username") String username,@JsonProperty("email") String email,@JsonProperty("password") String password,@JsonProperty("userId") UUID userId, boolean enabled,String role) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.userId = userId;
+        this.Enabled = enabled;
+        this.roles = role;
     }
 
     public String getUsername() {
@@ -63,10 +66,18 @@ public class userInfo {
     }
 
     public Boolean getEnabled() {
-        return true;
+        return Enabled;
     }
 
     public void setEnabled(Boolean enabled) {
         Enabled = enabled;
+    }
+
+    public String getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
     }
 }
