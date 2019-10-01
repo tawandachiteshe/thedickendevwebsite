@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -18,6 +20,7 @@ public class controller {
     private com.tawanda.dickensdev.service.userService userService;
     private StoriesService storiesService;
     private Random random = null;
+    private String name;
     @Autowired
     public controller(userService userService, StoriesService storiesService){
         this.userService = userService;
@@ -27,17 +30,28 @@ public class controller {
 
     @GetMapping("/")
     public String index(Model model){
-            random = new Random();
-           int rand = random.nextInt(storiesService.getAllStories().size());
-            model.addAttribute("StoriesHeading",storiesService.getAllStories().get(rand).getHeading());
-            model.addAttribute("StoriesBody",storiesService.getAllStories().get(rand).getBody());
         return "index";
     }
-
-    @GetMapping("/login")
-    public String login(){
+    @GetMapping("/contact")
+    public String contact(){
+        return "contact";
+    }
+   @RequestMapping("/login")
+    public String login(Model model){
+        model.addAttribute("login",new userInfo());
         return "login";
     }
+
+    @PostMapping("/login")
+    public String login(@ModelAttribute userInfo info,Model model){
+        if(userService.confirmationVerifier(info)){
+            return "index";
+        }else {
+            model.addAttribute("confirmationMessage", "please confirm your account");
+            return "login";
+        }
+    }
+
 
 
 

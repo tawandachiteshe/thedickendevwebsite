@@ -33,12 +33,17 @@ public class RegisterController {
     }
 
     @PostMapping("/register")
-    public String submitRegister(@ModelAttribute userInfo userInfo){
-        userInfo.setEnabled(true);
-        userInfo.setRoles(UserRoles.ROLE_USER.toString());
-        UserService.registerUser(userInfo);
+    public String submitRegister(@ModelAttribute userInfo userInfo,Model model){
 
-        return "login";
+        if(UserService.validateRegister(userInfo)){
+            userInfo.setEnabled(false);
+            userInfo.setRoles(UserRoles.ROLE_ADMIN.toString());
+            UserService.registerUser(userInfo);
+            return "login";
+        }else {
+            model.addAttribute("usernameError","username already exist!");
+            return "register";
+        }
     }
 
 

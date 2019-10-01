@@ -18,12 +18,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 import org.springframework.stereotype.Repository;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.temporal.Temporal;
+import java.time.temporal.TemporalAccessor;
 import java.util.*;
+import java.util.Date;
 import java.util.stream.Collectors;
 @Repository
 public class userService implements UserDetailsService {
@@ -32,9 +33,11 @@ public class userService implements UserDetailsService {
     private Pbkdf2PasswordEncoder encoder = new Pbkdf2PasswordEncoder("secret", 10000, 128);
     private final JdbcTemplate jdbcTemplate;
     private List<userInfo> userList;
+    private Date date;
 
     @Autowired
     public userService(JdbcTemplate jdbcTemplate) {
+        date = Date.from(Instant.now());
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -49,14 +52,15 @@ public class userService implements UserDetailsService {
             String password = resultSet.getString("userpassword");
             boolean enabled = resultSet.getBoolean("enabled");
             String role = resultSet.getString("user_role");
-            return new userInfo(name,uemail,password,userid,enabled,role);
+            String date = resultSet.getString("usertime");
+            return new userInfo(name,uemail,password,userid,enabled,role,date);
         });
     }
 
     public int registerUser(userInfo userInfo){
 
 
-        String sql = "insert into userdb(username,userid,useremail,userpassword,enabled,user_role) values (?,uuid_generate_v4(),?,?,?,?)";
+        String sql = "insert into userdb(username,userid,useremail,userpassword,enabled,user_role,usertime) values (?,uuid_generate_v4(),?,?,?,?,\'"+date.toLocaleString() +"\')";
         jdbcTemplate.execute(sql, new PreparedStatementCallback<Boolean>() {
             @Override
             public Boolean doInPreparedStatement(PreparedStatement preparedStatement) throws SQLException, DataAccessException {
@@ -84,9 +88,42 @@ public class userService implements UserDetailsService {
         return isValid;
     }
 
+    public boolean confirmationVerifier(userInfo info){
+        if (info.getEnabled()){
+            return info.getEnabled();
+        }else {
+            return info.getEnabled();
+        }
+    }
+
+    public boolean validateRegister(userInfo info){
+        String sql = "select * from userdb where username=" +"\'"+ info.getUsername() +"\'";
+        List<userInfo> users = jdbcTemplate.query(sql,(resultSet, i) -> {
+            String name = resultSet.getString("username");
+            UUID userid =  UUID.fromString(resultSet.getString("userid"));
+            String uemail = resultSet.getString("useremail");
+            String password = resultSet.getString("userpassword");
+            boolean enabled = resultSet.getBoolean("enabled");
+            String role = resultSet.getString("user_role");
+            String date = resultSet.getString("usertime");
+            return new userInfo(name,uemail,password,userid,enabled,role,date);
+        });
+
+        if (users.isEmpty()){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+
+
        List<userInfo> users = jdbcTemplate.query("select * from userdb where useremail=" + "\'" + s + "\'",(resultSet, i) -> {
             String name = resultSet.getString("username");
             UUID userid =  UUID.fromString(resultSet.getString("userid"));
@@ -94,17 +131,22 @@ public class userService implements UserDetailsService {
             String password = resultSet.getString("userpassword");
             boolean enabled = resultSet.getBoolean("enabled");
             String role = resultSet.getString("user_role");
-            return new userInfo(name,uemail,password,userid,enabled,role);
+            String date = resultSet.getString("usertime");
+            return new userInfo(name,uemail,password,userid,enabled,role,date);
         });
         userInfo user = users.get(0);
+        if(user.getEnabled()){
+            return new User(user.getEmail(), user.getPassword(), mapRolesToAuthorities(Arrays.asList(new Role(user.getRoles()))));
+        }else {
+            throw new UsernameNotFoundException("Please confirm your email");
+        }
 
-        return new User(user.getEmail(), user.getPassword(), mapRolesToAuthorities(Arrays.asList(new Role(user.getRoles()))));
     }
     public userInfo findByEmail(String email){
         userInfo userInfo = null;
         for (userInfo user:userList) {
             if(user.getEmail().equals(email)){
-                userInfo = new userInfo(user.getUsername(),user.getEmail(),user.getPassword(),user.getUserId(),user.getEnabled(),userInfo.getRoles());
+                userInfo = new userInfo(user.getUsername(),user.getEmail(),user.getPassword(),user.getUserId(),user.getEnabled(),userInfo.getRoles(),userInfo.getDate());
             }
         }
         return userInfo;
@@ -123,11 +165,12 @@ public class userService implements UserDetailsService {
             String password = resultSet.getString("userpassword");
             boolean enabled = resultSet.getBoolean("enabled");
             String role = resultSet.getString("user_role");
-            return new userInfo(name,uemail,password,userid,enabled,role);
+            String date = resultSet.getString("usertime");
+            return new userInfo(name,uemail,password,userid,enabled,role,date);
         });
     }
 
-    private Collection < ? extends GrantedAuthority > mapRolesToAuthorities(Collection <Role> roles) {
+    private Collection < ? extends GrantedAuthority > mapRolesToAuthorities(Collection<Role> roles) {
         return roles.stream()
                 .map(role -> new SimpleGrantedAuthority(role.getName()))
                 .collect(Collectors.toList());

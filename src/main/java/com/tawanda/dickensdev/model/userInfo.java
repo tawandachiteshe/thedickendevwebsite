@@ -3,6 +3,8 @@ package com.tawanda.dickensdev.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.stereotype.Component;
 
+import java.sql.Time;
+import java.util.Date;
 import java.util.UUID;
 @Component
 public class userInfo {
@@ -13,16 +15,19 @@ public class userInfo {
     private UUID ConfirmationToken;
     private Boolean Enabled;
     private String roles;
+    private String date;
+
     public userInfo(){
 
     }
-    public userInfo(@JsonProperty("username") String username,@JsonProperty("email") String email,@JsonProperty("password") String password,@JsonProperty("userId") UUID userId, boolean enabled,String role) {
+    public userInfo(@JsonProperty("username") String username,@JsonProperty("email") String email,@JsonProperty("password") String password,@JsonProperty("userId") UUID userId, boolean enabled,String role,String date) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.userId = userId;
         this.Enabled = enabled;
         this.roles = role;
+        this.date = date;
     }
 
     public String getUsername() {
@@ -79,5 +84,13 @@ public class userInfo {
 
     public void setRoles(String roles) {
         this.roles = roles;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

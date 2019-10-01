@@ -1,12 +1,12 @@
 h{
-    font-family: 'Manjari Roboto'
+    font-family: 'Manjari',Tahoma;
 }
 
 p{
-    font-family: 'Manjari Roboto';
+    font-family: 'Manjari',Tahoma;
 }
 input{
-    font-family: 'Manjari Roboto';
+    font-family: 'Manjari',Tahoma;
 }
 
 h1.infoHeader{
@@ -16,8 +16,8 @@ h1.infoHeader{
 
 
 body {
-    font-family: 'Manjari Roboto';
-    display: flex;
+    font-family: 'Manjari',Tahoma;
+    display: flexbox;
     min-height: 100vh;
     flex-direction: column;
   }

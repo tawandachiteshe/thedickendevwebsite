@@ -11,17 +11,18 @@
     <script src="/js/jquery-3.4.1.js" th:src="@{/js/jquery-3.4.1.js}"></script>
     <script th:src="@{/js/materialize.js}"></script>
     <script th:src="@{/js/main.js}"></script>
+    <script th:src="@{/js/autoUpdate.js}"></script>
     <title>thedickensdev</title>
 </head>
-<body class="infoDiv">
+<body class="infoDiv purple white-text lighten-1">
         <div>
-                <nav class="nav-extended purple lighten-3">
+                <nav class="nav-extended purple lighten-1">
                         <div class="nav-wrapper">
                           <a href="#" class="brand-logo"><img src="/icons/thedickenslogo.png" th:src="@{/icons/thedickenslogo.png}"  style="float:left" class="circle responsive-img material-icons" alt=""></a>
                           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"><img class="material-icon" th:src="@{/icons/menu.png}"></i></a>
                           <ul id="nav-mobile" class="right hide-on-med-and-down">
                             <li><a href="#">Home</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a th:href="@{/contact}" href="/contact">Contact</a></li>
                             <li><a href="#">About</a></li>
                           </ul>
                         </div>
@@ -43,65 +44,60 @@
                       </ul>
                      
         </div>
-        <div class="infoDiv">
+        <div class="infoDiv container">
             
-                <div id="index" class="center-align center infoDiv row col s12 purple-text lighten-3">
+                <div id="index" class="center-align center infoDiv row col s12 white-text lighten-3">
+                  <h6 class="right right-align col s12 divHeader"></h6>
                         <div class="col s12">
                             <h1 class="center-align">Computer Enthusiast, Game Dev, Innovator</h1>
                         </div>
                         <br>
-                        <div class="center col s12">
-                            <button class="center waves-effect center-align btn-large purple lighten-3">Read more</button>
-                        </div>    
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                       
                         <div class="infoDiv row">
-                            <div class="col s4 z-depth-0">
-                                <H5 th:text="${StoriesHeading}">Top Stories</H5>
+                            <div class="col  s12 z-depth-1">
+                                <H5 class="heading">Top Stories</H5>
                            
-                                <p th:text="${StoriesBody}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus reprehenderit non harum neque ipsam quibusdam nemo dolorem error doloribus molestias magnam ipsa qui, esse animi! Eveniet tenetur debitis sunt nam.</p>
+                                <p class="StoriesBody">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus reprehenderit non harum neque ipsam quibusdam nemo dolorem error doloribus molestias magnam ipsa qui, esse animi! Eveniet tenetur debitis sunt nam.</p>
                             </div>
-                            <div class="col s4 z-depth-0">
-                                <h5 th:text="${StoriesHeading}">Projects In progress</h5>
+                            <div class="col s12 z-depth-1">
+                                <h5 class="heading">Projects In progress</h5>
                                
-                                <p th:text="${StoriesBody}">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis harum est architecto saepe quisquam, earum fuga quia. Provident expedita dolores, odio quas autem enim officia dolorum suscipit architecto, commodi ex?</p>
+                                <p class="StoriesBody">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis harum est architecto saepe quisquam, earum fuga quia. Provident expedita dolores, odio quas autem enim officia dolorum suscipit architecto, commodi ex?</p>
 
                             </div>
-                            <div class="col s4 z-depth-0">
-                                <h5 th:text="${StoriesHeading}">Games</h5>
+                            <div class="col  s312 z-depth-1">
+                                <h5 class="heading">Games</h5>
                            
-                                <p th:text="${StoriesBody}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas fugiat corrupti repellat voluptates consectetur, maxime numquam, laudantium nemo vitae a est. Id odio perferendis voluptate nemo, perspiciatis voluptas praesentium ducimus.</p>
+                                <p class="StoriesBody">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas fugiat corrupti repellat voluptates consectetur, maxime numquam, laudantium nemo vitae a est. Id odio perferendis voluptate nemo, perspiciatis voluptas praesentium ducimus.</p>
                             </div>
                         </div>   
                     </div> 
                         
                 <div id="art" class="container col s12">
-                    <h1 class="purple-text center center-align lighten-3">Coming Soon!!!</h1>
+                    <h1 class="white-text center center-align lighten-3">Coming Soon!!!</h1>
                     </div>
-                    <div id="games" class="container row col s12">
-                            <h1 class="center-align center purple-text lighten-3">Projects</h1>
+                    <div id="games" class="row col s12">
+                            <h1 class="center-align center white-text lighten-3">Projects</h1>
                         
-                            <div class="purple-text lighten-3 card col s12">
-                                <h4 class="center center-align purple-text lighten-3" >Wave reloaded</h4>
+                            <div class="white-text lighten-3 col s12  z-depth-1">
+                                <h4 class="center center-align white-text lighten-3" >Wave reloaded</h4>
                                 <p>I've created this game from scratch using only java</p>
                             </div>
-                            <br>
-                            <div class="card purple-text lighten-3 col s12">
-                                <h4 class="center center-align purple-text lighten-3">Hang man</h4>
-                                <p class="purple-text lighten-3">hang man is just a game i made to have a better understanding of oop</p>
+                          
+                            <div class="white-text lighten-3 col s12 z-depth-1">
+                                <h4 class="center center-align white-text lighten-3">Hang man</h4>
+                                <p class="white-text lighten-3">hang man is just a game i made to have a better understanding of oop</p>
                                 </div>
-                                <br>
-                                <div class="card col s12">
-                                <h4 class="center center-align purple-text lighten-3">SectorCoin</h4>
-                                <p class="purple-text lighten-3">basic blockchain implemented in java</p>
+                            
+                                <div class="col z-depth-1 s12">
+                                <h4 class="center center-align white-text lighten-3">SectorCoin</h4>
+                                <p class="white-text lighten-3">basic blockchain implemented in java</p>
                                     </div>
                                   
                                                 
                     </div>
                     <div id="support" class="col s12">
-                        <div class="container">
+                        <div>
                             <ul class="collapsible">
                                 <li>
                                   <div class="collapsible-header"><i class="material-icons"></i>Sectorcoin</div>
@@ -126,24 +122,7 @@
         
 </body>
 
-<footer class="page-footer purple lighten-3">
-        <div>
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">The Dickens Dev</h5>
-              <p class="grey-text text-lighten-4">Dickens Dev is an individual interested in Computers. Please feel free to contact on the category below</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Keep in Touch!</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="https://twitter.com/NChiteshe"><i class="fa fa-2x fa-twitter label-icon left material-icons"></i>twitter.com</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!"><i class="left label-icon material-icons">email</i>dickenstawanda@gmail.com</a></li>
-                <li><a class="grey-text text-lighten-3" href="https://github.com/tawandachiteshe"><i class="label-icon left fa fa-2x fa-github material-icons"></i></a>github.com</li>
-                <li><a class="grey-text text-lighten-3" href="#!"><i class="fa label-icon left fa-2x fa-phone material-icons"></i></a>+263772460863/0772929373</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+<footer class="page-footer black lighten-3">
         <div class="footer-copyright">
           <div class="container">
           © 2019 all Copyrights are Reserved
