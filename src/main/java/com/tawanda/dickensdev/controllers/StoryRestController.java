@@ -26,7 +26,6 @@ public class StoryRestController {
     }
     @GetMapping
     public List<StoriesInfo> getAllStories(){
-        storiesService.addStory(new StoriesInfo(null,"sasa","sasa","sa'a's"));
         return storiesService.getAllStories();
     }
 }

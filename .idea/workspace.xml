@@ -2,52 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76f031d5-c213-4829-8b2e-0c6614a35350" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/ServerInfoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/model/ServerInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/service/ServerInfoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/RestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/RestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/model/userInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/model/userInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/service/userService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/service/userService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1__userdb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__userdb.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/icons/thedickenslogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tawanda/dickensdev/controllers/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tawanda/dickensdev/controllers/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tawanda/dickensdev/controllers/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tawanda/dickensdev/controllers/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tawanda/dickensdev/controllers/controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tawanda/dickensdev/controllers/controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tawanda/dickensdev/model/userInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tawanda/dickensdev/model/userInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tawanda/dickensdev/service/userService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tawanda/dickensdev/service/userService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tawanda/dickensdev/service/userService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tawanda/dickensdev/service/userService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V1__userDb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/migration/V1__userDb.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/icons/thedickenslogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Getting Started · Handling Form Submission.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Getting Started · Handling Form Submission_files/8294.js.download" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Getting Started · Handling Form Submission_files/Push-to-Pivotal-Dark.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Getting Started · Handling Form Submission_files/analytics.js.download" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Getting Started · Handling Form Submission_files/config-5a675c9cddea3a5f55b71416e67d47d6.js.download" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Getting Started · Handling Form Submission_files/css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Getting Started · Handling Form Submission_files/form.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Getting Started · Handling Form Submission_files/gsguide-cce08ab7a9f46db88819a14148e45bad.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Getting Started · Handling Form Submission_files/gtm.js.download" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Getting Started · Handling Form Submission_files/initializr.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Getting Started · Handling Form Submission_files/main-bc256dba5f9d253d6425441ccfb82576.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Getting Started · Handling Form Submission_files/notice" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Getting Started · Handling Form Submission_files/result.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Getting Started · Handling Form Submission_files/system-eccc019329febb5a1b06bde008ca5614.js.download" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/StoryRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/StoryRestController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -62,7 +18,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/controller.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="173">
@@ -103,7 +59,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/service/StoriesService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
+            <state relative-caret-position="325">
               <caret line="39" column="66" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -158,14 +114,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/StoryRestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="150">
+              <caret line="23" column="63" lean-forward="true" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#791#792#0" expanded="true" />
+                <element signature="e#853#854#0" expanded="true" />
+                <element signature="e#906#907#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -202,7 +160,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/ConfirmController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/model/UserRoles.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/model/Stories.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/StoryRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/DataRepository/DataBaseConnector.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/model/StoriesInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/service/StoriesService.java" />
@@ -222,6 +179,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/main.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/controller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/StoryRestController.java" />
       </list>
     </option>
   </component>
@@ -302,6 +260,15 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dickensdev" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thedickensdev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thedickensdev" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dickensdev" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="thedickensdev" type="b2602c69:ProjectViewProjectNode" />
@@ -417,6 +384,14 @@
       <option name="presentableId" value="Default" />
       <updated>1569613736564</updated>
     </task>
+    <task id="LOCAL-00001" summary="working app with ajax">
+      <created>1569964573284</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569964573284</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -459,6 +434,10 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="working app with ajax" />
+    <option name="LAST_COMMIT_MESSAGE" value="working app with ajax" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -673,16 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/service/StoriesService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="39" column="66" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/Security/SecurityConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -728,17 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/StoryRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#791#792#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -748,6 +706,29 @@
             <element signature="e#1028#1029#0" expanded="true" />
             <element signature="e#1085#1086#0" expanded="true" />
             <element signature="e#1109#1110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/service/StoriesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="39" column="66" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tawanda/dickensdev/controllers/StoryRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="23" column="63" lean-forward="true" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#853#854#0" expanded="true" />
+            <element signature="e#906#907#0" expanded="true" />
           </folding>
         </state>
       </provider>
