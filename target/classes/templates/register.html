@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="/css/materialize.css"  th:href="@{/css/materialize.css}" rel="stylesheet">
   <script src="/js/jquery-3.4.1.js" th:src="@{/js/jquery-3.4.1.js}"></script>
-  <script src="/static/js/materialize.js" th:src="@{/js/materialize.js}"></script>
+  <script th:src="@{/js/materialize.js}"></script>
   <script th:src="@{/js/main.js}"></script>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,9 +21,6 @@
         <main>
                 <h1 class="purple-text lighten-3 te">please sign up?</h1>
                 <div class="section"></div>
-                
-            <div th:if="${usernameError}" class="red-text"
-            role="alert" th:text=${usernameError}></div>
                 <div class="container section row z-depth-1" style="display: inline-block; padding: 42px 58px 0px 58px; border: 1px solid #EEE;">
                         <form th:action="@{/register}" method="POST"  th:object="${userInfo}" class="col s12">
                                 <div class="row">
@@ -49,8 +46,8 @@
                                       </div>
                                 </div>
                                 <div class="input-field col s12">
-                                        <button th:if="!${usernameError}"  onclick= "Materialize.toast('Registered',4000)" class="purple lighten-3 btn waves-effect waves-light" type="submit" name="action">sign up</button>
-                                        <button th:if="${usernameError}"  onclick= "Materialize.toast('Error: Account already exist',4000)" class="purple lighten-3 btn waves-effect waves-light" type="submit" name="action">sign up</button>
+                                        <button class="purple lighten-3 btn waves-effect waves-light" type="submit" name="action">sign up?
+                                        </button>
                                 </div>
                                 <div class="input-field col s12">
                                        <a href="" class="purple-text lighten-3">I have an account?</a>

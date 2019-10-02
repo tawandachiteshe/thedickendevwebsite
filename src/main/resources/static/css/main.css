@@ -1,12 +1,12 @@
 h{
-    font-family: 'Manjari',Tahoma;
+    font-family: 'Manjari Roboto'
 }
 
 p{
-    font-family: 'Manjari',Tahoma;
+    font-family: 'Manjari Roboto';
 }
 input{
-    font-family: 'Manjari',Tahoma;
+    font-family: 'Manjari Roboto';
 }
 
 h1.infoHeader{
@@ -14,10 +14,15 @@ h1.infoHeader{
     align-self: center;
 }
 
+img{
+    size: 64px;
+    width: 128px;
+    height: auto;
+}
 
 body {
-    font-family: 'Manjari',Tahoma;
-    display: flexbox;
+    font-family: 'Manjari Roboto';
+    display: flex;
     min-height: 100vh;
     flex-direction: column;
   }
@@ -47,6 +52,7 @@ body {
     margin-right: 20px;
   }
   .background-image{
+    background-image: url('/icons/background.png')
   }
 
   .input-field input[type=date]:focus,
