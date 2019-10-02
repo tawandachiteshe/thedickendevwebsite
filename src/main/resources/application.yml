@@ -1,6 +1,6 @@
 app:
   datasource:
-    jdbc-url:  jdbc:postegres://localhost:5432/userdb
+    jdbc-url:  jdbc:postgresql://localhost:5432/userdb
     username: postgres
     password: dick
 spring:
